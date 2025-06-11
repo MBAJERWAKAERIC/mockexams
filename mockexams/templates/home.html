@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mock Exams System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Local Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <!-- Your Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="container text-center welcome">
+    <h1 class="mb-4">Welcome to the Mock Exams System</h1>
+    <p class="lead">Choose how you'd like to continue</p>
+
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-3 mb-3">
+            <div class="card p-4">
+                <h4>Student</h4>
+                <a href="{% url 'student_login' %}" class="btn btn-primary">Sign In</a>
+                <a href="{% url 'student_signup' %}" class="btn btn-outline-primary">Sign Up</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card p-4">
+                <h4>Teacher</h4>
+                <a href="{% url 'teacher_login' %}" class="btn btn-success">Sign In</a>
+                <a href="{% url 'teacher_signup' %}" class="btn btn-outline-success">Sign Up</a>
+            </div>
+        </div>
+
+        <div class="col-md-3 mb-3">
+            <div class="card p-4">
+                <h4>Admin</h4>
+                <a href="{% url 'admin_login' %}" class="btn btn-danger">Sign In</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Local Bootstrap JS -->
+<script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Your Custom JS -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>

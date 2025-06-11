@@ -1,0 +1,22 @@
+<!-- templates/adminpanel/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Login</title>
+</head>
+<body>
+    <h2>Admin Login</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color:red;">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <label>Username:</label><input type="text" name="username"><br>
+        <label>Password:</label><input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+    <p>Don't have an account? <a href="{% url 'admin_signup' %}">Signup here</a></p>
+</body>
+</html>
